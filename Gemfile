@@ -19,7 +19,7 @@ gem 'bourbon' # CSS3 SASS import rules
 
 # Daemons
 gem 'foreman' # daemon management: Procfile
-gem 'resque' # job queuing and management
+# gem 'resque' # job queuing and management
 
 # Renderers
 gem 'haml' # cleaner HTML alternative/renderer
