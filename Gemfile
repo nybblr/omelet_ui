@@ -26,6 +26,10 @@ gem 'haml' # cleaner HTML alternative/renderer
 gem 'haml-rails', :group => :development
 gem 'rabl' # JSON, XML, etc. templating
 
+# Security
+gem 'cancan' # authorization gem for defining who can do what
+gem 'devise' # login functionality/interface/integration
+
 # ActiveRecord
 gem 'squeel' # WHERE queries without raw SQL fragments
 
