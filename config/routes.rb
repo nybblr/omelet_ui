@@ -1,9 +1,5 @@
 OmeletUi::Application.routes.draw do
-  get "reports/index"
-
-  get "reports/show"
-
-  get "reports/edit"
+  resources :reports, :only => [:index, :show, :edit]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
