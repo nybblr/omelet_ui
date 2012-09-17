@@ -4,5 +4,8 @@
 ENGINE_ROOT = File.expand_path('../..', __FILE__)
 ENGINE_PATH = File.expand_path('../../lib/omelet_ui/engine', __FILE__)
 
+# Setup RSpec
+# require File.expand_path('../../spec/spec_helper',  __FILE__)
+
 require 'rails/all'
 require 'rails/engine/commands'
