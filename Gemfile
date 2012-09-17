@@ -7,6 +7,9 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+# Gem management dependency
+gem 'jeweler'
+
 # Storage
 gem 'paperclip' # manage model file attachments
 gem 'friendly_id' # prettier URLs with history

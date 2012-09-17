@@ -63,6 +63,7 @@ GEM
     foreman (0.57.0)
       thor (>= 0.13.6)
     friendly_id (4.0.8)
+    git (1.2.5)
     haml (3.1.7)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -71,6 +72,11 @@ GEM
       railties (~> 3.0)
     hike (1.2.1)
     i18n (0.6.1)
+    jeweler (1.8.4)
+      bundler (~> 1.0)
+      git (>= 1.2.5)
+      rake
+      rdoc
     journey (1.0.4)
     jquery-rails (2.1.2)
       railties (>= 3.1.0, < 5.0)
@@ -197,6 +203,7 @@ DEPENDENCIES
   friendly_id
   haml
   haml-rails
+  jeweler
   jquery-rails
   kaminari
   paperclip
