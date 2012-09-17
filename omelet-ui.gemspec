@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "omelet-ui"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jonathan Martin, Wylie McEvoy, Brian Aikens, Jarad Mallard, Ky Lee"]
@@ -63,10 +63,11 @@ Gem::Specification.new do |s|
     "db/seeds.rb",
     "doc/README_FOR_APP",
     "lib/assets/.gitkeep",
-    "lib/omelet/engine.rb",
+    "lib/omelet-ui/engine.rb",
     "lib/tasks/.gitkeep",
     "lib/templates/haml/scaffold/_form.html.haml",
     "log/.gitkeep",
+    "omelet-ui.gemspec",
     "public/404.html",
     "public/422.html",
     "public/500.html",
