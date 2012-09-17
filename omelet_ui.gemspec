@@ -4,8 +4,8 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "omelet-ui"
-  s.version = "0.0.0"
+  s.name = "omelet_ui"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jonathan Martin, Wylie McEvoy, Brian Aikens, Jarad Mallard, Ky Lee"]
@@ -25,19 +25,32 @@ Gem::Specification.new do |s|
     "VERSION",
     "app/assets/images/omelet_ui/.gitkeep",
     "app/assets/javascripts/omelet_ui/application.js",
+    "app/assets/javascripts/omelet_ui/reports.js",
     "app/assets/stylesheets/omelet_ui/application.css",
+    "app/assets/stylesheets/omelet_ui/reports.css",
     "app/controllers/omelet_ui/application_controller.rb",
+    "app/controllers/omelet_ui/reports_controller.rb",
     "app/helpers/omelet_ui/application_helper.rb",
+    "app/helpers/omelet_ui/reports_helper.rb",
     "app/views/layouts/omelet_ui/application.html.erb",
+    "app/views/omelet_ui/reports/edit.html.erb",
+    "app/views/omelet_ui/reports/index.html.erb",
+    "app/views/omelet_ui/reports/show.html.erb",
+    "config/initializers/kaminari_config.rb",
+    "config/initializers/simple_form.rb",
+    "config/locales/simple_form.en.yml",
     "config/routes.rb",
     "lib/omelet_ui.rb",
     "lib/omelet_ui/engine.rb",
     "lib/omelet_ui/version.rb",
     "lib/tasks/omelet_ui_tasks.rake",
-    "omelet_ui_default.gemspec",
-    "script/rails"
+    "lib/templates/erb/scaffold/_form.html.erb",
+    "script/rails",
+    "spec/spec_helper.rb",
+    "test/functional/omelet_ui/reports_controller_test.rb",
+    "test/unit/helpers/omelet_ui/reports_helper_test.rb"
   ]
-  s.homepage = "http://github.com/nybblr/omelet-ui"
+  s.homepage = "http://github.com/nybblr/omelet_ui"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.15"
   s.summary = "Front-end Rails engine for Omelet report queue."
@@ -46,7 +59,6 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<omelet_ui>, [">= 0"])
       s.add_runtime_dependency(%q<rails>, ["= 3.2.8"])
       s.add_runtime_dependency(%q<sqlite3>, [">= 0"])
       s.add_runtime_dependency(%q<jeweler>, [">= 0"])
@@ -62,11 +74,9 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<squeel>, [">= 0"])
       s.add_runtime_dependency(%q<rb-readline>, [">= 0"])
       s.add_runtime_dependency(%q<jquery-rails>, [">= 0"])
-      s.add_development_dependency(%q<sqlite3>, [">= 0"])
       s.add_development_dependency(%q<haml-rails>, [">= 0"])
       s.add_development_dependency(%q<rspec-rails>, [">= 0"])
     else
-      s.add_dependency(%q<omelet_ui>, [">= 0"])
       s.add_dependency(%q<rails>, ["= 3.2.8"])
       s.add_dependency(%q<sqlite3>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
@@ -82,12 +92,10 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<squeel>, [">= 0"])
       s.add_dependency(%q<rb-readline>, [">= 0"])
       s.add_dependency(%q<jquery-rails>, [">= 0"])
-      s.add_dependency(%q<sqlite3>, [">= 0"])
       s.add_dependency(%q<haml-rails>, [">= 0"])
       s.add_dependency(%q<rspec-rails>, [">= 0"])
     end
   else
-    s.add_dependency(%q<omelet_ui>, [">= 0"])
     s.add_dependency(%q<rails>, ["= 3.2.8"])
     s.add_dependency(%q<sqlite3>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
@@ -103,7 +111,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<squeel>, [">= 0"])
     s.add_dependency(%q<rb-readline>, [">= 0"])
     s.add_dependency(%q<jquery-rails>, [">= 0"])
-    s.add_dependency(%q<sqlite3>, [">= 0"])
     s.add_dependency(%q<haml-rails>, [">= 0"])
     s.add_dependency(%q<rspec-rails>, [">= 0"])
   end
