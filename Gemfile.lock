@@ -170,7 +170,6 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.6)
     squeel (1.0.11)
       activerecord (~> 3.0)
       activesupport (~> 3.0)
@@ -213,7 +212,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   shoulda
   simple_form
-  sqlite3
   squeel
   stipulate
   therubyracer

@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "omelet_ui"
-  s.version = "0.0.2"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jonathan Martin, Wylie McEvoy, Brian Aikens, Jarad Mallard, Ky Lee"]
-  s.date = "2012-09-17"
+  s.date = "2012-09-28"
   s.description = "Adds a mountable interface and API for adding/requesting/querying reports on a local Omelet report queue server."
   s.email = "me@nybblr.com"
   s.extra_rdoc_files = [
@@ -36,9 +36,9 @@ Gem::Specification.new do |s|
     "app/helpers/omelet_ui/reports_helper.rb",
     "app/models/omelet_ui/template.rb",
     "app/views/layouts/omelet_ui/application.html.haml",
-    "app/views/omelet_ui/reports/edit.html.erb",
-    "app/views/omelet_ui/reports/index.html.erb",
-    "app/views/omelet_ui/reports/show.html.erb",
+    "app/views/omelet_ui/reports/edit.html.haml",
+    "app/views/omelet_ui/reports/index.html.haml",
+    "app/views/omelet_ui/reports/show.html.haml",
     "config/initializers/kaminari_config.rb",
     "config/initializers/simple_form.rb",
     "config/locales/simple_form.en.yml",
@@ -51,9 +51,7 @@ Gem::Specification.new do |s|
     "lib/templates/erb/scaffold/_form.html.erb",
     "omelet_ui.gemspec",
     "script/rails",
-    "spec/spec_helper.rb",
-    "test/fixtures/omelet_ui/templates.yml",
-    "test/unit/omelet_ui/template_test.rb"
+    "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/nybblr/omelet_ui"
   s.require_paths = ["lib"]
@@ -65,7 +63,6 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, ["= 3.2.8"])
-      s.add_runtime_dependency(%q<sqlite3>, [">= 0"])
       s.add_runtime_dependency(%q<jeweler>, [">= 0"])
       s.add_runtime_dependency(%q<paperclip>, [">= 0"])
       s.add_runtime_dependency(%q<friendly_id>, [">= 0"])
@@ -83,7 +80,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rspec-rails>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["= 3.2.8"])
-      s.add_dependency(%q<sqlite3>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<paperclip>, [">= 0"])
       s.add_dependency(%q<friendly_id>, [">= 0"])
@@ -102,7 +98,6 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<rails>, ["= 3.2.8"])
-    s.add_dependency(%q<sqlite3>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<paperclip>, [">= 0"])
     s.add_dependency(%q<friendly_id>, [">= 0"])

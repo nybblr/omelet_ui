@@ -1,2 +1,8 @@
-%h1 Reports#index
-%p Find me in app/views/omelet_ui/reports/index.html.erb
+%h1 Hey there.
+%p Here are all your reports.
+  = Report.for(@app_id, @user_id).pending.count
+  are pending,
+  = @running.count
+  are running, and
+  = @finished.count
+  are done!
