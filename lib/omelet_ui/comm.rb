@@ -15,19 +15,19 @@ module OmeletUi
 			response = http.start {|h| h.request(req) }
 		end
 
-		def post(url, data)
+		def post(url, data={})
 			request url, data, Net::HTTP::Post
 		end
 
-		def put(url, data)
+		def put(url, data={})
 			request url, data, Net::HTTP::Put
 		end
 
-		def delete(url, data)
+		def delete(url, data={})
 			request url, data, Net::HTTP::Delete
 		end
 
-		def get(url, data)
+		def get(url, data={})
 			request url, data, Net::HTTP::Get
 		end
 	end
