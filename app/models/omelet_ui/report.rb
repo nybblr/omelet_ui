@@ -1,13 +1,27 @@
 require 'omelet_ui/comm'
-require 'tableless'
+require 'omelet_ui/tableless'
 
 module OmeletUi
 	class Report < Tableless
-		# include ActiveModel::Validations
-		# include ActiveModel::Conversion
-		# extend ActiveModel::Naming
+		# Since this is a tableless model,
+		# we have to define the schema here
+		column :id, :integer
+		column :status, :string
+		column :title, :string
+		column :template, :string
+		column :user_meta, :text
+		column :app_meta, :text
+		column :queued_at, :datetime
+		column :completed_at, :datetime
+		column :created_at, :datetime
+		column :updated_at, :datetime
 
-		attr_accessible	:id
+		serialize :user_meta, Hash
+		serialize :app_meta, Hash
+
+		# Tell rails which attributes can
+		# be safely mass assigned.
+		attr_accessible :id
 		attr_accessible :status
 		attr_accessible :title
 		attr_accessible :template
@@ -17,12 +31,6 @@ module OmeletUi
 		attr_accessible :completed_at
 		attr_accessible :created_at
 		attr_accessible :updated_at
-
-		# def initialize attrs={}
-		# 	attrs.each do |key, value|
-		# 		send "#{key}=".to_sym, value
-		# 	end
-		# end
 
 		def self.for(user_id)
 			### Overview
@@ -47,18 +55,5 @@ module OmeletUi
 			@comm ||= OmeletUi::Comm.new OmeletUi.server
 			@comm
 		end
-
-		# def inspect
-		# 	return { \
-		# 		:status => status,
-		# 		:title => title,
-		# 		:template => template,
-		# 		:user_meta => user_meta,
-		# 		:app_meta => app_meta,
-		# 		:queued_at => queued_at,
-		# 		:completed_at => completed_at,
-		# 		:created_at => created_at,
-		# 	}.inspect
-		# end
 	end
 end
