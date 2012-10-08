@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "omelet_ui"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jonathan Martin, Wylie McEvoy, Brian Aikens, Jarad Mallard, Ky Lee"]
-  s.date = "2012-10-01"
+  s.date = "2012-10-08"
   s.description = "Adds a mountable interface and API for adding/requesting/querying reports on a local Omelet report queue server."
   s.email = "me@nybblr.com"
   s.extra_rdoc_files = [
@@ -48,6 +48,7 @@ Gem::Specification.new do |s|
     "lib/omelet_ui.rb",
     "lib/omelet_ui/comm.rb",
     "lib/omelet_ui/engine.rb",
+    "lib/omelet_ui/tableless.rb",
     "lib/omelet_ui/version.rb",
     "lib/tasks/omelet_ui_tasks.rake",
     "lib/templates/erb/scaffold/_form.html.erb",
