@@ -3,7 +3,16 @@ require 'json'
 
 module OmeletUi
 	class Comm
+		attr_accessor :server
+
+		def initialize server=nil
+			self.server = server if server
+		end
+
 		def request(url, data, method)
+			# Use server as base URL if provided
+			url = @server + url if @server
+
 			uri = URI.parse(url)
 
 			# Convert the parameters into JSON and set the content type as application/json
