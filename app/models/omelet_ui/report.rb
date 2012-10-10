@@ -36,7 +36,9 @@ module OmeletUi
 
 		def self.for(user_id)
 			# Returns a JSON string, convert to Report object.
-			response = comm.get "reports.json?user_id=#{user_id}&app_id=#{OmeletUi.app_id}"
+			data = {:user_id => user_id, :app_id => OmeletUi.app_id}
+			response = comm.get "reports.json", data
+			# ?user_id=#{user_id}&app_id=#{OmeletUi.app_id}
 
 			hash = ActiveSupport::JSON.decode response.body
 			reports = hash.collect do |report|
@@ -54,6 +56,10 @@ module OmeletUi
 		def self.comm
 			@comm ||= OmeletUi::Comm.new OmeletUi.server
 			@comm
+		end
+
+		def async_create_report
+			Resque.enqueue(ReportJob, self.id)
 		end
 	end
 end
