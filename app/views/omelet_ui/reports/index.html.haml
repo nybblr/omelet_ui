@@ -1,9 +1,13 @@
 %h1 Hey there.
 %p Here are all your reports.
 %p=@reports.inspect
--# = Report.for(@app_id, @user_id).pending.count
--# are pending,
--# = @running.count
--# are running, and
--# = @finished.count
--# are done!
+%p
+  You have
+  = @reports.count
+  reports.
+  = @pending.count
+  are pending,
+  = @running.count
+  are running, and
+  = @finished.count
+  are done!

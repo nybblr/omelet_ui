@@ -32,10 +32,10 @@ module OmeletUi
 		attr_accessible :created_at
 		attr_accessible :updated_at
 
+		stipulate :that => :status, :can_be => [:pending, :queued, :processing, :completed]
+
 		def self.for(user_id)
-			### Overview
-			##  Need to ping queue server with standard HTTP request
-			##  Returns a JSON string, convert to Report object.
+			# Returns a JSON string, convert to Report object.
 			response = comm.get "reports.json?user_id=#{user_id}&app_id=#{OmeletUi.app_id}"
 
 			hash = ActiveSupport::JSON.decode response.body
