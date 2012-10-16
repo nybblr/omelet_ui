@@ -58,8 +58,5 @@ module OmeletUi
 			@comm
 		end
 
-		def async_create_report
-			Resque.enqueue(ReportJob, self.id)
-		end
 	end
 end
