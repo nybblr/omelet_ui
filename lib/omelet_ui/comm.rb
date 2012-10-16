@@ -19,6 +19,7 @@ module OmeletUi
 			req = method.new(uri.path)
 			req.body = JSON.generate(data)
 			req["Content-Type"] = "application/json"
+			req["Accept"] = "application/json"
 
 			http = Net::HTTP.new(uri.host, uri.port)
 			response = http.start {|h| h.request(req) }
