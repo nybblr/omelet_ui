@@ -7,7 +7,21 @@
   reports.
   = @pending.count
   are pending,
+  = @queued.count
+  are queued,
   = @running.count
   are running, and
   = @finished.count
   are done!
+
+%table
+  %thead
+    %th ID
+    %th Title
+    %th Status
+  %tbody
+    - for report in @reports do
+      %tr
+        %td= report.id
+        %td= report.title
+        %td= report.status

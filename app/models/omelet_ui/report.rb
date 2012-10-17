@@ -38,7 +38,6 @@ module OmeletUi
 			# Returns a JSON string, convert to Report object.
 			data = {:user_id => user_id, :app_id => OmeletUi.app_id}
 			response = comm.get "reports.json", data
-			# ?user_id=#{user_id}&app_id=#{OmeletUi.app_id}
 
 			hash = ActiveSupport::JSON.decode response.body
 			reports = hash.collect do |report|
@@ -47,6 +46,19 @@ module OmeletUi
 			end
 
 			return reports
+		end
+
+		# Request the report
+		def request(callback=nil)
+			# Get curent db params
+			db = Rails.configuration.database_configuration[Rails.env]
+
+			data = {}
+			data[:report] = attributes
+			data[:db_params] = db
+
+			# Send create request
+			response = comm.post "reports.json", data
 		end
 
 		def persisted?
