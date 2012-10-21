@@ -10,6 +10,14 @@ module OmeletUi
 	mattr_accessor :server
 	@@server = nil
 
+	# Set user model for UID
+	mattr_accessor :current_user
+	@@current_user = :current_user
+
+	# Set user identifier method
+	mattr_accessor :identifier
+	@@identifier = :identifier
+
 	# Return a block for configuring from default setup
 	def self.setup
 		yield self

@@ -5,16 +5,16 @@ module OmeletUi
 	class Report < Tableless
 		# Since this is a tableless model,
 		# we have to define the schema here
-		column :id, :integer
-		column :status, :string
-		column :title, :string
-		column :template, :string
-		column :user_meta, :text
-		column :app_meta, :text
-		column :queued_at, :datetime
+		column :id,           :integer
+		column :status,       :string
+		column :title,        :string
+		column :template,     :string
+		column :user_meta,    :text
+		column :app_meta,     :text
+		column :queued_at,    :datetime
 		column :completed_at, :datetime
-		column :created_at, :datetime
-		column :updated_at, :datetime
+		column :created_at,   :datetime
+		column :updated_at,   :datetime
 
 		serialize :user_meta, Hash
 		serialize :app_meta, Hash
@@ -41,7 +41,6 @@ module OmeletUi
 
 			hash = ActiveSupport::JSON.decode response.body
 			reports = hash.collect do |report|
-				puts(report["report"])
 				Report.new report["report"]
 			end
 

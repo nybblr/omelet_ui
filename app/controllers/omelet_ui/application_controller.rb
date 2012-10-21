@@ -1,4 +1,5 @@
 module OmeletUi
-  class ApplicationController < ActionController::Base
+  class ApplicationController < ::ApplicationController
+		layout "omelet_ui/application"
   end
 end
