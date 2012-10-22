@@ -1,7 +1,23 @@
 /*
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
-*/
-body {
-	background-color: red;
+ */
+
+
+/*
+  Style settings for the Reports List 
+ */
+#selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: white; }
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 400px; border: 1px solid #000;}
+#selectable li { margin: 3px; padding: 0.4em; font-size: 1em; height: 18px; }
+
+/*
+  Style settings for something test
+ */
+#something .ui-selecting {
+	background: silver;
+}
+#something .ui-selected {
+	background: gray;
 }
