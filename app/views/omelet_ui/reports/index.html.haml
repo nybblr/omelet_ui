@@ -26,14 +26,34 @@
         %td= report.title
         %td= report.status
 
-%ul{:id => 'reportList'}
-  %li item 0
-  %li item 1
-  %li item 2
-  %li item 3
-  %li item 4
-  %li item 5
-  %li item 6
-  %li item 7
-  %li item 8
+%hr
+%ul#something
+  %li Sales Report 1
+  %li Sales Report 2
+  %li Sales Report 3
+  %li Sales Report 4
+  %li Sales Report 5
+  %li Sales Report 6
+  %li Sales Report 7
 
+
+%hr
+%ol#selectable
+  %li.ui-widget-content Sales Report 1
+  %li.ui-widget-content Sales Report 2
+  %li.ui-widget-content Sales Report 3
+  %li.ui-widget-content Sales Report 4
+  %li.ui-widget-content Sales Report 5
+  %li.ui-widget-content Sales Report 6
+  %li.ui-widget-content Sales Report 7
+
+%hr
+%select{:multiple => "multiple"}
+  %option.ui-widget.content{:value => "1"} Sales Report 1
+  %option.ui-widget.content{:value => "2"} Sales Report 2
+  %option.ui-widget.content{:value => "3"} Sales Report 3
+  %option.ui-widget.content{:value => "4"} Sales Report 4
+  %option.ui-widget.content{:value => "5"} Sales Report 5
+  %option.ui-widget.content{:value => "6"} Sales Report 6
+
+%input#to2{:name => "to2", :title => "assign", :type => "button", :value => "View Reports"}
