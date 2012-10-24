@@ -17,5 +17,15 @@ module OmeletUi
 
 		def edit
 		end
+
+		def new
+			@report = Report.new
+		end
+
+		def create
+			@report = Report.new params[:report]
+
+			redirect_to reports_path
+		end
 	end
 end
