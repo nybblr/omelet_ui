@@ -9,6 +9,7 @@ module OmeletUi
 		column :status,       :string
 		column :title,        :string
 		column :template,     :string
+		column :user_id,      :string
 		column :user_meta,    :text
 		column :app_meta,     :text
 		column :queued_at,    :datetime
@@ -25,6 +26,7 @@ module OmeletUi
 		attr_accessible :status
 		attr_accessible :title
 		attr_accessible :template
+		attr_accessible :user_id
 		attr_accessible :user_meta
 		attr_accessible :app_meta
 		attr_accessible :queued_at
@@ -41,7 +43,9 @@ module OmeletUi
 
 			hash = ActiveSupport::JSON.decode response.body
 			reports = hash.collect do |report|
-				Report.new report["report"]
+				r = Report.new report["report"]
+				r.user_id = user_id
+				r
 			end
 
 			return reports
@@ -52,12 +56,24 @@ module OmeletUi
 			# Get curent db params
 			db = Rails.configuration.database_configuration[Rails.env]
 
-			data = {}
+			data = {:user_id => user_id, :app_id => OmeletUi.app_id}
 			data[:report] = attributes
+			data[:report].delete "id"
+			data[:report].delete "created_at"
+			data[:report].delete "updated_at"
+
+			data[:callback] = callback
 			data[:db_params] = db
 
 			# Send create request
-			response = comm.post "reports.json", data
+			response = Report.comm.post "reports.json", data
+		end
+
+		def kill
+			data = { :user_id => user_id, :app_id => OmeletUi.app_id }
+
+			# Send destroy request
+			response = Report.comm.delete "reports/#{id}.json", data
 		end
 
 		def persisted?
