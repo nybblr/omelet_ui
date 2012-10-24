@@ -24,6 +24,8 @@ module OmeletUi
 
 		def create
 			@report = Report.new params[:report]
+			@report.save
+			@report.request
 
 			redirect_to reports_path
 		end

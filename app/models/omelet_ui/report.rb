@@ -12,6 +12,7 @@ module OmeletUi
 		column :user_id,      :string
 		column :user_meta,    :text
 		column :app_meta,     :text
+		column :results,      :text
 		column :queued_at,    :datetime
 		column :completed_at, :datetime
 		column :created_at,   :datetime
@@ -29,12 +30,13 @@ module OmeletUi
 		attr_accessible :user_id
 		attr_accessible :user_meta
 		attr_accessible :app_meta
+		attr_accessible :results
 		attr_accessible :queued_at
 		attr_accessible :completed_at
 		attr_accessible :created_at
 		attr_accessible :updated_at
 
-		stipulate :that => :status, :can_be => [:pending, :queued, :processing, :completed]
+		stipulate :that => :status, :can_be => [:pending, :queued, :processing, :completed, :failed, :killed]
 
 		def self.for(user_id)
 			# Returns a JSON string, convert to Report object.
@@ -49,6 +51,18 @@ module OmeletUi
 			end
 
 			return reports
+		end
+
+		def self.find(report_id, user_id)
+			# Returns a JSON string, convert to Report object.
+			data = {:user_id => user_id, :app_id => OmeletUi.app_id}
+			response = comm.get "reports/#{report_id}.json", data
+
+			hash = ActiveSupport::JSON.decode response.body
+			report = Report.new hash["report"]
+			report.user_id = user_id
+
+			return report
 		end
 
 		# Request the report
