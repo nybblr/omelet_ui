@@ -3,14 +3,29 @@
   They will automatically be included in application.css.
  */
 
-
+/*
+  Global settings
+ */
 * {
-	font-family: Arial, Verdana, sans-serif;
+	font-family: Arial, Verdana, sans-serif; margin: 0em;
 }
 
 
+/*
+  Header bar
+ */
+#header { width: 100%; height: 2em; background-color: #E43800; padding: 0; }
+#welcome-text { float: left; color: white; padding: 0.6em 1em; font-size: 0.8em; }
+#return-text { float: right; color: white; padding: 0.6em 1em; font-size: 0.8em; }
 
-#title-bar { width: 100%; height: 2em; background-color: #E43800; padding: 0}
+/*
+  Toolbar, below header bar
+ */
+#toolbar { width: 100%; height: 5em; background-color: #F0F0F0; padding: 0em; }
+#title-text { float: left; padding: 0.6em 1em; }
 
-#welcome-text { float: left; color: white; padding: 0.6em 1em; font-size: 0.8em }
-#return-text { float: right; color: white; padding: 0.6em 1em; font-size: 0.8em }
+#all-button { float: left; padding: 0.6em 1em; font-size: 0.8em; }
+
+#queued-button { float: left; padding: 0.6em 1em; font-size: 0.8em; }
+
+#completed-button { float: left; padding: 0.6em 1em; font-size: 0.8em; }
