@@ -83,6 +83,20 @@ module OmeletUi
 			response = Report.comm.post "reports.json", data
 		end
 
+		def update
+			data = { :user_id => user_id, :app_id => OmeletUi.app_id }
+
+			data[:report] = attributes
+			data[:report].delete "id"
+			data[:report].delete "created_at"
+			data[:report].delete "updated_at"
+
+			data[:report].delete "user_id"
+
+			# Send update request
+			response = Report.comm.put "reports/#{id}.json", data
+		end
+
 		def kill
 			data = { :user_id => user_id, :app_id => OmeletUi.app_id }
 
