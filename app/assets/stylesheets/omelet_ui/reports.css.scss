@@ -4,20 +4,13 @@
  */
 
 
-/*
-  Style settings for the Reports List
- */
-#selectable .ui-selecting { background: #FECA40; }
-#selectable .ui-selected { background: #F39814; color: white; }
-#selectable { list-style-type: none; margin: 0; padding: 0; width: 400px; border: 1px solid #000;}
-#selectable li { margin: 3px; padding: 0.4em; font-size: 1em; height: 18px; }
+* {
+	font-family: Arial, Verdana, sans-serif;
+}
 
-/*
-  Style settings for something test
- */
-#something .ui-selecting {
-	background: silver;
-}
-#something .ui-selected {
-	background: gray;
-}
+
+
+#title-bar { width: 100%; height: 2em; background-color: #E43800; padding: 0}
+
+#welcome-text { float: left; color: white; padding: 0.6em 1em; font-size: 0.8em }
+#return-text { float: right; color: white; padding: 0.6em 1em; font-size: 0.8em }
