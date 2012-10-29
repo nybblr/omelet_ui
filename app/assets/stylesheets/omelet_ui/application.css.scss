@@ -9,9 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require ./fonts/index
  *= require_tree .
  */
 
 @import "bourbon";
 @import "reset";
+@import "fonts/index";
+

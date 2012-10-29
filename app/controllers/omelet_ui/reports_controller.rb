@@ -4,7 +4,7 @@ module OmeletUi
 	class ReportsController < ApplicationController
 		def index
 			@reports = Report.for \
-				send(:current_user).send(:identifier)
+				send(OmeletUi.current_user).send(OmeletUi.identifier)
 
 			@pending  = @reports.select {|r| r.pending? }
 			@queued   = @reports.select {|r| r.queued? }

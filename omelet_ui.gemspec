@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "omelet_ui"
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jonathan Martin, Wylie McEvoy, Brian Aikens, Jarad Mallard, Ky Lee"]
@@ -27,17 +27,11 @@ Gem::Specification.new do |s|
     "Rakefile",
     "TODO",
     "VERSION",
-    "app/assets/fonts/entypo.eot",
-    "app/assets/fonts/entypo.svg",
-    "app/assets/fonts/entypo.ttf",
-    "app/assets/fonts/entypo.woff",
     "app/assets/images/omelet_ui/.gitkeep",
     "app/assets/javascripts/omelet_ui/application.js",
     "app/assets/javascripts/omelet_ui/reports.js.coffee",
     "app/assets/stylesheets/omelet_ui/_reset.css.scss",
     "app/assets/stylesheets/omelet_ui/application.css.scss",
-    "app/assets/stylesheets/omelet_ui/fonts/_entypo.css.scss",
-    "app/assets/stylesheets/omelet_ui/fonts/index.css.scss",
     "app/assets/stylesheets/omelet_ui/reports.css.scss",
     "app/controllers/omelet_ui/application_controller.rb",
     "app/controllers/omelet_ui/reports_controller.rb",
