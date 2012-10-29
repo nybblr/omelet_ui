@@ -5,16 +5,17 @@
 
 Gem::Specification.new do |s|
   s.name = "omelet_ui"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jonathan Martin, Wylie McEvoy, Brian Aikens, Jarad Mallard, Ky Lee"]
-  s.date = "2012-10-08"
+  s.date = "2012-10-29"
   s.description = "Adds a mountable interface and API for adding/requesting/querying reports on a local Omelet report queue server."
   s.email = "me@nybblr.com"
   s.extra_rdoc_files = [
     "README.md",
-    "README.rdoc"
+    "README.rdoc",
+    "TODO"
   ]
   s.files = [
     ".rspec",
@@ -24,12 +25,20 @@ Gem::Specification.new do |s|
     "README.md",
     "README.rdoc",
     "Rakefile",
+    "TODO",
     "VERSION",
+    "app/assets/fonts/entypo.eot",
+    "app/assets/fonts/entypo.svg",
+    "app/assets/fonts/entypo.ttf",
+    "app/assets/fonts/entypo.woff",
     "app/assets/images/omelet_ui/.gitkeep",
     "app/assets/javascripts/omelet_ui/application.js",
-    "app/assets/javascripts/omelet_ui/reports.js",
-    "app/assets/stylesheets/omelet_ui/application.css",
-    "app/assets/stylesheets/omelet_ui/reports.css",
+    "app/assets/javascripts/omelet_ui/reports.js.coffee",
+    "app/assets/stylesheets/omelet_ui/_reset.css.scss",
+    "app/assets/stylesheets/omelet_ui/application.css.scss",
+    "app/assets/stylesheets/omelet_ui/fonts/_entypo.css.scss",
+    "app/assets/stylesheets/omelet_ui/fonts/index.css.scss",
+    "app/assets/stylesheets/omelet_ui/reports.css.scss",
     "app/controllers/omelet_ui/application_controller.rb",
     "app/controllers/omelet_ui/reports_controller.rb",
     "app/helpers/omelet_ui/application_helper.rb",
@@ -37,8 +46,10 @@ Gem::Specification.new do |s|
     "app/models/omelet_ui/report.rb",
     "app/models/omelet_ui/template.rb",
     "app/views/layouts/omelet_ui/application.html.haml",
+    "app/views/omelet_ui/reports/_form.html.haml",
     "app/views/omelet_ui/reports/edit.html.haml",
     "app/views/omelet_ui/reports/index.html.haml",
+    "app/views/omelet_ui/reports/new.html.haml",
     "app/views/omelet_ui/reports/show.html.haml",
     "config/initializers/kaminari_config.rb",
     "config/initializers/simple_form.rb",
@@ -73,7 +84,6 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<simple_form>, [">= 0"])
       s.add_runtime_dependency(%q<kaminari>, [">= 0"])
       s.add_runtime_dependency(%q<bourbon>, [">= 0"])
-      s.add_runtime_dependency(%q<foreman>, [">= 0"])
       s.add_runtime_dependency(%q<haml>, [">= 0"])
       s.add_runtime_dependency(%q<rabl>, [">= 0"])
       s.add_runtime_dependency(%q<squeel>, [">= 0"])
@@ -90,7 +100,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<simple_form>, [">= 0"])
       s.add_dependency(%q<kaminari>, [">= 0"])
       s.add_dependency(%q<bourbon>, [">= 0"])
-      s.add_dependency(%q<foreman>, [">= 0"])
       s.add_dependency(%q<haml>, [">= 0"])
       s.add_dependency(%q<rabl>, [">= 0"])
       s.add_dependency(%q<squeel>, [">= 0"])
@@ -108,7 +117,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<simple_form>, [">= 0"])
     s.add_dependency(%q<kaminari>, [">= 0"])
     s.add_dependency(%q<bourbon>, [">= 0"])
-    s.add_dependency(%q<foreman>, [">= 0"])
     s.add_dependency(%q<haml>, [">= 0"])
     s.add_dependency(%q<rabl>, [">= 0"])
     s.add_dependency(%q<squeel>, [">= 0"])
