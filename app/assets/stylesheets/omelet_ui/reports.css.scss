@@ -8,6 +8,7 @@
  */
 
 $icons: "Entypo";
+$teal: #4ea694;
 
 html, body {
 	width: 100%;
@@ -29,11 +30,16 @@ header {
 	background-color: #E43800;
 	padding: 0;
 }
+
 #welcome-text {
 	display: inline-block;
 	color: white;
 	padding: 0.6em 1em;
 	font-size: 0.8em;
+
+	a {
+		color: white;
+	}
 }
 
 #return-text {
@@ -91,8 +97,8 @@ nav {
 	font-family: $icons;
 	padding-bottom: 1em;
 	font-size: 3em;
-	line-height: 1em;
-	margin-bottom: -1em;
+	line-height: 0.7em;
+	margin-bottom: -0.8em;
 }
 
 #all-button-text {
@@ -112,8 +118,8 @@ nav {
 	font-family: $icons;
 	padding-bottom: 1em;
 	font-size: 3em;
-	line-height: 1em;
-	margin-bottom: -1em;
+	line-height: 0.7em;
+	margin-bottom: -0.8em;
 }
 
 #queued-button-text {
@@ -133,8 +139,8 @@ nav {
 	font-family: $icons;
 	padding-bottom: 1em;
 	font-size: 3em;
-	line-height: 1em;
-	margin-bottom: -1em;
+	line-height: 0.7em;
+	margin-bottom: -0.8em;
 }
 
 #completed-button-text {
@@ -145,4 +151,56 @@ section {
 	background-color: #F0F0F0;
 	min-height: 50em;
 	border-top: 1px solid #D8D8D8;
+
+	.button {
+		display: block;
+		border-radius: 5px;
+		// width: 100px;
+		// height: 35px;
+		color: white;
+
+		padding-left: 2em;
+		padding-right: 2em;
+		padding-top: 0.4em;
+		padding-bottom: 0.4em;
+
+		border: solid 1px darken($teal, 10%);
+
+		background-color: $teal;
+		text-decoration: none;
+	}
+
+	table {
+		margin-top: 2em;
+		td, th {
+			padding: 0.25em;
+			color: hsl(0, 0, 60%);
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+		th {
+			text-transform: uppercase;
+		}
+		thead {
+			border-bottom: solid 1px hsl(0, 0, 60%);
+		}
+		tbody {
+			td.status {
+				display: inline;
+				vertical-align: top;
+				font-family: $icons;
+				font-size: 60px;
+				line-height: 20px;
+				padding-right: 0;
+
+				color: hsl(0, 0, 40%);
+			}
+			em {
+				color: $teal;
+			}
+			strong {
+				color: hsl(0, 0, 20%);
+			}
+		}
+	}
 }

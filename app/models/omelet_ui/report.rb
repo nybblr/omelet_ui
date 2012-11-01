@@ -38,6 +38,16 @@ module OmeletUi
 
 		stipulate :that => :status, :can_be => [:pending, :queued, :processing, :completed, :failed, :killed]
 
+		# AppMeta = Struc.new(:note, :fund, :account_number)
+
+		# def app_meta=(attr={})
+		# 	new_meta = AppMeta.new
+		# 	new_meta.members.each do |k|
+		# 		new_meta.send(:"#{k}=", attr.fetch(k, nil))
+		# 	end
+		# 	super(new_meta)
+		# end
+
 		def self.for(user_id)
 			# Returns a JSON string, convert to Report object.
 			data = {:user_id => user_id, :app_id => OmeletUi.app_id}

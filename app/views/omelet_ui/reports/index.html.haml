@@ -21,4 +21,22 @@
       FINISHED
 
 %section
-  = @reports.inspect
+  -# = @reports.inspect
+  %table
+    %thead
+      %th
+      %th Report
+      %th Completed
+      %th Actions
+    %tbody
+      - for report in @reports do
+        %tr
+          %td.status &#10003;
+          %td
+            %strong Tithes
+            for last week
+            %em 6/12/11 – 6/19/11
+          %td
+            %strong 8:34 PM
+            today
+          %td= link_to "View", report_path(0), :class => "button view", :target => "_blank"
