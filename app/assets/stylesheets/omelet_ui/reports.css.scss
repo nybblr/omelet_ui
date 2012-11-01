@@ -1,10 +1,10 @@
 /*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
+	Place all the styles related to the matching controller here.
+	They will automatically be included in application.css.
  */
 
 /*
-  Global settings
+	Global settings
  */
 
 $icons: "Entypo";
@@ -21,34 +21,128 @@ html {
 
 
 /*
-  Header bar
+	Header bar
  */
-header { width: 100%; height: 2em; background-color: #E43800; padding: 0; }
-#welcome-text { display: inline-block; color: white; padding: 0.6em 1em; font-size: 0.8em; }
-#return-text { float: right; color: white; padding: 0.6em 1em; font-size: 0.8em; }
+header {
+	width: 100%;
+	height: 2em;
+	background-color: #E43800;
+	padding: 0;
+}
+#welcome-text {
+	display: inline-block;
+	color: white;
+	padding: 0.6em 1em;
+	font-size: 0.8em;
+}
+
+#return-text {
+	float: right;
+	color: white;
+	padding: 0.6em 1em;
+	font-size: 0.8em;
+}
 
 /*
-  Toolbar, below header bar
+	Toolbar, below header bar
  */
-nav { width: 100%; display: block; position: relative; height: 5em; padding: 0em; border-bottom: 1px solid #C0C0C0; border-top: 1px solid #C0C0C0; }
-
-#title-container { float: left; height: 2em; padding: 1.5em 4em; border-right: 2px solid #E0E0E0; }
-#company-name { float: left; font-size: 2em; padding-right: 0.5em; text-transform: uppercase; }
-#reports-text { float: left; font-size: 1.6em; color: #505050; padding-top: 0.2em; }
-
-
-#all-button { float: left; height: 3em; width: 3em; padding: 1em; border-right: 2px solid #E0E0E0; text-align: center; }
-#all-button-icon {
-	font-family: $icons; padding-bottom: 1em; font-size: 3em; line-height: 1em; margin-bottom: -1em;
+nav {
+	width: 100%;
+	display: block;
+	position: relative;
+	height: 5em;
+	padding: 0em;
+	border-bottom: 1px solid #C0C0C0;
+	border-top: 1px solid #C0C0C0;
 }
-#all-button-text { font-size: 0.7em; }
 
-#queued-button { float: left; height: 3em; width: 3em; padding: 1em; border-right: 2px solid #E0E0E0; text-align: center; }
-#queued-button-icon { font-family: $icons; padding-bottom: 1em; font-size: 3em; line-height: 1em; margin-bottom: -1em }
-#queued-button-text { font-size: 0.7em; }
+#title-container {
+	float: left;
+	height: 2em;
+	padding: 1.5em 4em;
+	border-right: 2px solid #E0E0E0;
+}
 
-#completed-button { float: left; height: 3em; width: 3em; padding: 1em; border-right: 2px solid #E0E0E0; text-align: center; }
-#completed-button-icon { font-family: $icons; padding-bottom: 1em; font-size: 3em; line-height: 1em; margin-bottom: -1em }
-#completed-button-text { font-size: 0.7em; }
+#company-name {
+	float: left;
+	font-size: 2em;
+	padding-right: 0.5em;
+	text-transform: uppercase;
+}
 
-section { background-color: #F0F0F0; min-height: 50em; border-top: 1px solid #D8D8D8; }
+#reports-text {
+	float: left;
+	font-size: 1.6em;
+	color: #505050;
+	padding-top: 0.2em;
+}
+
+
+#all-button {
+	float: left;
+	height: 3em;
+	width: 3em;
+	padding: 1em;
+	border-right: 2px solid #E0E0E0;
+	text-align: center;
+}
+
+#all-button-icon {
+	font-family: $icons;
+	padding-bottom: 1em;
+	font-size: 3em;
+	line-height: 1em;
+	margin-bottom: -1em;
+}
+
+#all-button-text {
+	font-size: 0.7em;
+}
+
+#queued-button {
+	float: left;
+	height: 3em;
+	width: 3em;
+	padding: 1em;
+	border-right: 2px solid #E0E0E0;
+	text-align: center;
+}
+
+#queued-button-icon {
+	font-family: $icons;
+	padding-bottom: 1em;
+	font-size: 3em;
+	line-height: 1em;
+	margin-bottom: -1em;
+}
+
+#queued-button-text {
+	font-size: 0.7em;
+}
+
+#completed-button {
+	float: left;
+	height: 3em;
+	width: 3em;
+	padding: 1em;
+	border-right: 2px solid #E0E0E0;
+	text-align: center;
+}
+
+#completed-button-icon {
+	font-family: $icons;
+	padding-bottom: 1em;
+	font-size: 3em;
+	line-height: 1em;
+	margin-bottom: -1em;
+}
+
+#completed-button-text {
+	font-size: 0.7em;
+}
+
+section {
+	background-color: #F0F0F0;
+	min-height: 50em;
+	border-top: 1px solid #D8D8D8;
+}
