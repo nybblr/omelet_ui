@@ -16,5 +16,29 @@
           = link_to "back to the homepage?", OmeletUi.home_path
         #return-text
           powered by omelet
-      = yield
+
+
+      %nav
+        #title-container
+          #company-name
+            = OmeletUi.app_name
+          #reports-text
+            reports
+        #all-button
+          #all-button-icon
+            M
+          #all-button-text
+            ALL
+        #queued-button
+          #queued-button-icon
+            S
+          #queued-button-text
+            QUEUED
+        #completed-button
+          #completed-button-icon
+            F
+          #completed-button-text
+            FINISHED
+      %section
+        = yield
 
