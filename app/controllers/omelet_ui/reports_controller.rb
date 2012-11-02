@@ -13,6 +13,7 @@ module OmeletUi
 		end
 
 		def show
+			redirect_to "/assets/omelet_ui/sample.jpg"
 		end
 
 		def edit
