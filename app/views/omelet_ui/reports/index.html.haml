@@ -31,7 +31,7 @@
     %tbody
       - for report in @reports do
         %tr
-          %td.status &#10003;
+          %td.status W
           %td
             %strong Tithes
             for last week
@@ -41,7 +41,7 @@
             today
           %td= link_to "View", report_path(0), :class => "button view", :target => "_blank"
         %tr
-          %td.status &#9888;
+          %td.status N
           %td
             %strong Donations
             for this year
@@ -51,7 +51,7 @@
             yesterday
           %td= link_to "Retry", report_path(0), :class => "button retry", :target => "_blank"
         %tr
-          %td.status &#128340;
+          %td.status c
           %td
             %strong Roster
             for
