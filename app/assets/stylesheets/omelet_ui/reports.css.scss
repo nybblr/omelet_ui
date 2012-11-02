@@ -9,6 +9,8 @@
 
 $icons: "Entypo";
 $teal: #4ea694;
+$blue: #5e8fc2;
+$orange: #e53900;
 
 html, body {
 	width: 100%;
@@ -159,35 +161,73 @@ section {
 		// height: 35px;
 		color: white;
 
-		padding-left: 2em;
-		padding-right: 2em;
-		padding-top: 0.4em;
-		padding-bottom: 0.4em;
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		text-align: center;
+
+		box-shadow: 0px 1px 3px hsla(0, 0, 0%, 0.2);
 
 		border: solid 1px darken($teal, 10%);
 
 		background-color: $teal;
 		text-decoration: none;
+
+		font-size: 0.9em;
+
+		&.view {
+			background-color: $teal;
+			border-color: darken($teal, 10%);
+		}
+		&.retry {
+			background-color: $blue;
+			border-color: darken($blue, 10%);
+		}
+		&.cancel {
+			background-color: $orange;
+			border-color: darken($orange, 10%);
+		}
 	}
 
 	table {
 		margin-top: 2em;
+		margin-left: auto;
+		margin-right: auto;
+
+		min-width: 75%;
+		max-width: 100%;
+
 		td, th {
 			padding: 0.25em;
 			color: hsl(0, 0, 60%);
 			padding-left: 1em;
 			padding-right: 1em;
+			padding-bottom: 1em;
 		}
 		th {
 			text-transform: uppercase;
+			font-weight: bold;
+			border-bottom: solid 1px hsl(0, 0, 90%);
+			padding-bottom: 0.5em;
+			font-size: 1.2em;
 		}
 		thead {
-			border-bottom: solid 1px hsl(0, 0, 60%);
 		}
 		tbody {
+			tr {
+				text-align: center;
+
+				&:first-child td {
+					padding-top: 1em;
+					&.status {
+						line-height: 0.85em;
+					}
+				}
+			}
 			td.status {
 				display: inline;
-				vertical-align: top;
+				vertical-align: middle;
 				font-family: $icons;
 				font-size: 60px;
 				line-height: 20px;
