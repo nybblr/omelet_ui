@@ -1,4 +1,39 @@
  - Alleviate DIVitis =)
  - Semantic elements
- - Homepage link option
- - Config page
+
+DEMO
+Architecture
+	Completed, remaining
+	Modularity
+	Queue server
+	Callbacks
+	Hands off, least commitment approach (tempting, styles, queries)
+
+What we're NOT
+	Machine learning system that auto generates report queries
+	We provide a nice system to offload report generation and interfacing
+	System responsible for generating the actual query and providing access to report request
+
+Features
+	UI mockup
+	Example, UI, and queue
+	JSON API
+	Login, configure
+		Secured, custom current_user method fetcher
+		Highly customizable due to architecture
+		RESTful way
+		Loosely coupled interface for creating new report to generation
+	Separation of responsibilities
+	Queue technologies/production power
+
+Future
+	Notifications layer
+	Template config backend
+	Database connection
+	Sample CRON jobs
+	Sample templates
+
+
+
+
+Data design section
