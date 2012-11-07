@@ -13,6 +13,7 @@ module OmeletUi
 		column :user_meta,    :text
 		column :app_meta,     :text
 		column :results,      :text
+		column :query,        :text
 		column :queued_at,    :datetime
 		column :completed_at, :datetime
 		column :created_at,   :datetime
@@ -31,6 +32,7 @@ module OmeletUi
 		attr_accessible :user_meta
 		attr_accessible :app_meta
 		attr_accessible :results
+		attr_accessible :query
 		attr_accessible :queued_at
 		attr_accessible :completed_at
 		attr_accessible :created_at
@@ -77,6 +79,16 @@ module OmeletUi
 		def request(callback=nil)
 			# Get curent db params
 			db = Rails.configuration.database_configuration[Rails.env]
+
+			# For testing, patch sqlite3 database path
+			if db["adapter"] == "sqlite3"
+				db["database"] = "#{Rails.root}/#{db["database"]}"
+			end
+
+			# Convert query to string
+			unless query.is_a? String
+				query = query.to_sql
+			end
 
 			data = {:user_id => user_id, :app_id => OmeletUi.app_id}
 			data[:report] = attributes
