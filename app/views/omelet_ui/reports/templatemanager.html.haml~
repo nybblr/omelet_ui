@@ -1,0 +1,3 @@
+%h1 Create a report
+%p Hey there! Fill in a few fields for us and we'll start building your report.
+= render "templateform"

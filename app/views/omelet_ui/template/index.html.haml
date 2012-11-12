@@ -1,0 +1,39 @@
+-# = @reports.inspect
+%table
+  %thead
+    %th
+    %th{:width => "60%"} Report
+    %th Completed
+    %th Actions
+  %tbody
+    - for report in @reports do
+      %tr
+        %td.status W
+        %td
+          %strong Tithes
+          for last week
+          %em 6/12/11 – 6/19/11
+        %td
+          %strong 8:34 PM
+          today
+        %td= link_to "View", report_path(0), :class => "button view", :target => "_blank"
+      %tr
+        %td.status N
+        %td
+          %strong Donations
+          for this year
+          %em 6/12/11 – 6/19/11
+        %td
+          %strong 7:42
+          yesterday
+        %td= link_to "Retry", report_path(0), :class => "button retry", :target => "_blank"
+      %tr
+        %td.status c
+        %td
+          %strong Roster
+          for
+          %em Summer Camp 2013
+        %td
+          %strong 12:50 PM
+          today
+        %td= link_to "Cancel", report_path(0), :class => "button cancel", :target => "_blank"
