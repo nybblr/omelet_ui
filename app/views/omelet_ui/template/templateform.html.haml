@@ -1,7 +1,0 @@
-= simple_form_for @template do |f|
-  = f.input :title
-  = f.simple_fields_for :app_meta, @template.app_meta do |b|
-    = b.input :notes, :as => :text
-    = b.input :start, :as => :datetime
-    = b.input :end, :as => :datetime
-  = f.submit
