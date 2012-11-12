@@ -1,13 +1,18 @@
 module OmeletUi
-  class Template < ActiveRecord::Base
-    attr_accessible :description, :layout, :status, :title
+	class Template < ActiveRecord::Base
+		attr_accessible :description, :layout, :status, :title, :format, :fields
 
-	def app_meta=(attr={})
-		new_meta = Struct.new(:Layout, :status).new
-		new_meta.members.each do |k|
-		new_meta.send(:"#{k}=", attr.fetch(k, nil))
+		serialize :fields, Hash
+
+		stipulate :that => :status, :can_be => [:draft, :active, :inactive]
+
+		def fields= value
+			if value.kind_of? String
+				self.fields = ActiveSupport::JSON.decode value
+			else
+				super value
+			end
 		end
-		super(new_meta)
+
 	end
-  end
 end

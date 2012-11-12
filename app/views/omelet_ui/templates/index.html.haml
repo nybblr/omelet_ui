@@ -1,2 +1,14 @@
-<h1>Templates#index</h1>
-<p>Find me in app/views/omelet_ui/templates/index.html.erb</p>
+%h1 Templates
+%p Hello there, here are all the templates you have made.
+%p
+  You can
+  = link_to "make a new template", new_template_path
+  or edit one below.
+
+%ul
+  - for template in @templates do
+    %li
+      = link_to template.title, edit_template_path(template)
+      , a
+      = template.format.upcase
+      template.
