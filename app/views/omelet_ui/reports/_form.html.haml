@@ -1,7 +1,6 @@
-= simple_form_for @report do |f|
+= simple_form_for @report, :url => "/omelet/reports?template_id=#{@template.id}" do |f|
   = f.input :title
   = f.simple_fields_for :app_meta, @report.app_meta do |b|
-    = b.input :notes, :as => :text
-    = b.input :start, :as => :datetime
-    = b.input :end, :as => :datetime
+    - @template.fields.each do |k, v|
+      = b.input k.to_sym, :as => v.to_sym
   = f.submit

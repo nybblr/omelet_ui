@@ -1,4 +1,5 @@
 require_dependency "omelet_ui/application_controller"
+require "omelet_ui/dynamic_binding"
 
 module OmeletUi
 	class ReportsController < ApplicationController
@@ -21,10 +22,19 @@ module OmeletUi
 
 		def new
 			@report = Report.new
+			@template = Template.find params[:template_id]
 		end
 
 		def create
 			@report = Report.new params[:report]
+			@template = Template.find params[:template_id]
+
+			# Generate query
+			# First, create binding for input
+			bind = OmeletUi::DynamicBinding @report.app_meta
+			# Then execute it in that binding
+			@report.query = bind.execute { eval @template.query }.to_sql
+
 			@report.save
 			@report.request
 
