@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "omelet_ui"
-  s.version = "0.1.3"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jonathan Martin, Wylie McEvoy, Brian Aikens, Jarad Mallard, Ky Lee"]
-  s.date = "2012-10-29"
+  s.date = "2012-11-14"
   s.description = "Adds a mountable interface and API for adding/requesting/querying reports on a local Omelet report queue server."
   s.email = "me@nybblr.com"
   s.extra_rdoc_files = [
@@ -27,16 +27,26 @@ Gem::Specification.new do |s|
     "Rakefile",
     "TODO",
     "VERSION",
+    "app/assets/fonts/omelet_ui/entypo-webfont.eot",
+    "app/assets/fonts/omelet_ui/entypo-webfont.svg",
+    "app/assets/fonts/omelet_ui/entypo-webfont.ttf",
+    "app/assets/fonts/omelet_ui/entypo-webfont.woff",
     "app/assets/images/omelet_ui/.gitkeep",
+    "app/assets/images/omelet_ui/sample.jpg",
     "app/assets/javascripts/omelet_ui/application.js",
     "app/assets/javascripts/omelet_ui/reports.js.coffee",
+    "app/assets/javascripts/omelet_ui/templates.js",
     "app/assets/stylesheets/omelet_ui/_reset.css.scss",
     "app/assets/stylesheets/omelet_ui/application.css.scss",
+    "app/assets/stylesheets/omelet_ui/fonts/_index.css.scss",
     "app/assets/stylesheets/omelet_ui/reports.css.scss",
+    "app/assets/stylesheets/omelet_ui/templates.css.scss",
     "app/controllers/omelet_ui/application_controller.rb",
     "app/controllers/omelet_ui/reports_controller.rb",
+    "app/controllers/omelet_ui/templates_controller.rb",
     "app/helpers/omelet_ui/application_helper.rb",
     "app/helpers/omelet_ui/reports_helper.rb",
+    "app/helpers/omelet_ui/templates_helper.rb",
     "app/models/omelet_ui/report.rb",
     "app/models/omelet_ui/template.rb",
     "app/views/layouts/omelet_ui/application.html.haml",
@@ -45,13 +55,22 @@ Gem::Specification.new do |s|
     "app/views/omelet_ui/reports/index.html.haml",
     "app/views/omelet_ui/reports/new.html.haml",
     "app/views/omelet_ui/reports/show.html.haml",
+    "app/views/omelet_ui/templates/_form.html.haml",
+    "app/views/omelet_ui/templates/edit.html.haml",
+    "app/views/omelet_ui/templates/index.html.haml",
+    "app/views/omelet_ui/templates/new.html.haml",
+    "app/views/omelet_ui/templates/show.html.haml",
     "config/initializers/kaminari_config.rb",
     "config/initializers/simple_form.rb",
     "config/locales/simple_form.en.yml",
     "config/routes.rb",
     "db/migrate/20120917193135_create_omelet_ui_templates.rb",
+    "db/migrate/20121112171255_add_format_to_omelet_ui_template.rb",
+    "db/migrate/20121112173344_add_fields_to_omelet_ui_template.rb",
+    "db/migrate/20121114174023_add_query_to_omelet_ui_template.rb",
     "lib/omelet_ui.rb",
     "lib/omelet_ui/comm.rb",
+    "lib/omelet_ui/dynamic_binding.rb",
     "lib/omelet_ui/engine.rb",
     "lib/omelet_ui/tableless.rb",
     "lib/omelet_ui/version.rb",
