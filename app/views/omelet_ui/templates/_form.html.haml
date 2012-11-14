@@ -4,5 +4,6 @@
   = f.input :layout
   = f.input :format, :as => :select, :collection => ActionView::Template.template_handler_extensions
   = f.input :fields, :input_html => { :value => @template.fields.to_json }
+  = f.input :query
   = f.input :status, :as => :select, :collection => OmeletUi::Template.statuses
   = f.button :submit
