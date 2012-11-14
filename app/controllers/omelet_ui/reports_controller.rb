@@ -14,7 +14,19 @@ module OmeletUi
 		end
 
 		def show
-			redirect_to "/assets/omelet_ui/sample.jpg"
+			@report = Report.find params[:id], \
+				send(OmeletUi.current_user).send(OmeletUi.identifier)
+			@template = Template.find_by_title @report.template
+
+			puts "-------------------------------------------"
+			puts @report.inspect
+
+			@results = @report.results
+			@app_meta = @report.app_meta
+
+			render :inline => @template.layout,
+				:type => @template.format.to_sym,
+				:layout => true
 		end
 
 		def edit
