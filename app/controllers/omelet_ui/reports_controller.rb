@@ -18,9 +18,6 @@ module OmeletUi
 				send(OmeletUi.current_user).send(OmeletUi.identifier)
 			@template = Template.find_by_title @report.template
 
-			puts "-------------------------------------------"
-			puts @report.inspect
-
 			@results = @report.results
 			@app_meta = @report.app_meta
 
