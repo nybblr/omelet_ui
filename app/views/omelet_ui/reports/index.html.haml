@@ -8,32 +8,25 @@
   %tbody
     - for report in @reports do
       %tr
-        %td.status W
+        %td.status
+          - if report.completed?
+            W
+          - elsif report.processing?
+            N
+          - elsif report.failed?
+            c
+          - elsif report.killed?
+            ❌
         %td
-          %strong Tithes
+          %strong= report.title
           for last week
           %em 6/12/11 – 6/19/11
         %td
-          %strong 8:34 PM
+          %strong= report.completed_at || report.created_at
           today
-        %td= link_to "View", report_path(0), :class => "button view", :target => "_blank"
-      %tr
-        %td.status N
-        %td
-          %strong Donations
-          for this year
-          %em 6/12/11 – 6/19/11
-        %td
-          %strong 7:42
-          yesterday
-        %td= link_to "Retry", report_path(0), :class => "button retry", :target => "_blank"
-      %tr
-        %td.status c
-        %td
-          %strong Roster
-          for
-          %em Summer Camp 2013
-        %td
-          %strong 12:50 PM
-          today
-        %td= link_to "Cancel", report_path(0), :class => "button cancel", :target => "_blank"
+        - if report.queued?
+          %td= link_to "Cancel", report_path(report), :class => "button cancel", :target => "_blank"
+        - elsif report.failed?
+          %td= link_to "Retry", report_path(report), :class => "button retry", :target => "_blank"
+        - else
+          %td= link_to "View", report_path(report), :class => "button view", :target => "_blank"
