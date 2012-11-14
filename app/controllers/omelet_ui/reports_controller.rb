@@ -31,11 +31,17 @@ module OmeletUi
 
 			# Generate query
 			# First, create binding for input
-			bind = OmeletUi::DynamicBinding @report.app_meta
+			bind = DynamicBinding.new @report.app_meta
 			# Then execute it in that binding
-			@report.query = bind.execute { eval @template.query }.to_sql
+			query = @template.query
+			@report.query = bind.execute { eval query }.to_sql
 
-			@report.save
+			# Set user_id and template
+			@report.user_id = \
+				send(OmeletUi.current_user).send(OmeletUi.identifier)
+			@report.template = @template.title
+
+			# And off we go!
 			@report.request
 
 			redirect_to reports_path
