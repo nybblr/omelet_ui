@@ -19,7 +19,13 @@ module OmeletUi
 			@template = Template.find_by_title @report.template
 
 			@results = @report.results
-			@app_meta = @report.app_meta
+			if @results.kind_of? Array
+				@results.map! { |r|
+					HashWithIndifferentAccess.new r
+				}
+			end
+
+			@app_meta = HashWithIndifferentAccess.new @report.app_meta
 
 			render :inline => @template.layout,
 				:type => @template.format.to_sym,
