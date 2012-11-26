@@ -29,7 +29,7 @@ module OmeletUi
 
 			render :inline => @template.layout,
 				:type => @template.format.to_sym,
-				:layout => true
+				:layout => "report"
 		end
 
 		def edit
