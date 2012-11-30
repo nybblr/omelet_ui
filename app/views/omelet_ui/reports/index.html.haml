@@ -22,7 +22,7 @@
           for last week
           %em 6/12/11 – 6/19/11
         %td
-          %strong= report.completed_at || report.created_at
+          %strong= (report.completed_at || report.created_at).strftime("%b %d, %Y")
           today
         - if report.queued?
           %td= link_to "Cancel", report_path(report), :class => "button cancel", :target => "_blank"
